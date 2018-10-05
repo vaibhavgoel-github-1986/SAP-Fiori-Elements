@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+	<edmx:Reference
+		Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value">
+		<edmx:Include Namespace="Org.OData.Capabilities.V1"/>
+	</edmx:Reference>
+	<edmx:Reference
+		Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='LOCAL')/$value">
+		<edmx:Include Namespace="Org.OData.Core.V1"/>
+	</edmx:Reference>
+	<edmx:Reference
+		Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+		<edmx:Include Namespace="com.sap.vocabularies.Common.v1"/>
+	</edmx:Reference>
+	<edmx:Reference
+		Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value">
+		<edmx:Include Namespace="com.sap.vocabularies.Communication.v1"/>
+	</edmx:Reference>
+	<edmx:Reference
+		Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value">
+		<edmx:Include Namespace="Org.OData.Measures.V1"/>
+	</edmx:Reference>
+	<edmx:Reference
+		Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
+		<edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="/sap/opu/odata/IWBEP/GWSAMPLE_BASIC">
+		<edmx:Include Namespace="GWSAMPLE_BASIC"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://docs.oasis-open.org/odata/odata-data-aggregation-ext/v4.0/cs02/vocabularies/Org.OData.Aggregation.V1.xml">
+		<edmx:Include Alias="Aggregation" Namespace="Org.OData.Aggregation.V1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Authorization.V1.xml">
+		<edmx:Include Alias="Auth" Namespace="Org.OData.Authorization.V1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Validation.V1.xml">
+		<edmx:Include Alias="Validation" Namespace="Org.OData.Validation.V1"/>
+	</edmx:Reference>
+	<edmx:DataServices>
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="zanno4sample_anno_mdl.v1">
+			<Annotations Target="GWSAMPLE_BASIC.SalesShareType">
+				<Annotation Term="UI.KPI" Qualifier="TotalSales">
+					<Record Type="UI.KPIType">
+						<PropertyValue Property="Detail">
+							<Record Type="UI.KPIDetailType">
+								<PropertyValue Property="DefaultPresentationVariant" Path="@UI.PresentationVariant#Eval_by_Currency1"/>
+								<PropertyValue Property="AlternativePresentationVariants">
+									<Collection>
+										<Path>@UI.PresentationVariant#Eval_by_Currency_Column</Path>
+									</Collection>
+								</PropertyValue>
+							</Record>
+						</PropertyValue>
+						<PropertyValue Property="SelectionVariant">
+							<Record>
+								<PropertyValue Property="SelectOptions">
+									<Collection>
+										<Record>
+											<PropertyValue Property="PropertyName" PropertyPath="OverallSales"/>
+											<PropertyValue Property="Ranges">
+												<Collection>
+													<Record>
+														<PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/>
+														<PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/GT"/>
+														<PropertyValue Property="Low" String="200"/>
+													</Record>
+												</Collection>
+											</PropertyValue>
+										</Record>
+									</Collection>
+								</PropertyValue>
+							</Record>
+						</PropertyValue>
+						<PropertyValue Property="DataPoint" Path="@UI.DataPoint#Eval_by_Country-Generic"/>
+						<PropertyValue Property="ID" String="String for KPI Annotation"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.KPI" Qualifier="AllActualCostsLine">
+					<Record Type="UI.KPIType">
+						<PropertyValue Property="Detail">
+							<Record Type="UI.KPIDetailType">
+								<PropertyValue Property="DefaultPresentationVariant" Path="@UI.PresentationVariant#Eval_by_Currency1_line"/>
+								<PropertyValue Property="AlternativePresentationVariants">
+									<Collection>
+										<Path>@UI.PresentationVariant#Eval_by_Currency_Column</Path>
+									</Collection>
+								</PropertyValue>
+							</Record>
+						</PropertyValue>
+						<PropertyValue Property="SelectionVariant">
+							<Record>
+								<PropertyValue Property="SelectOptions">
+									<Collection>
+										<Record>
+											<PropertyValue Property="PropertyName" PropertyPath="OverallSales"/>
+											<PropertyValue Property="Ranges">
+												<Collection>
+													<Record>
+														<PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/>
+														<PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/GT"/>
+														<PropertyValue Property="Low" String="200"/>
+													</Record>
+												</Collection>
+											</PropertyValue>
+										</Record>
+									</Collection>
+								</PropertyValue>
+							</Record>
+						</PropertyValue>
+						<PropertyValue Property="DataPoint" Path="@UI.DataPoint#Eval_by_Country-Generic"/>
+						<PropertyValue Property="ID" String="String for KPI Annotation"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="Eval_by_Country-Generic">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="OverallSales"/>
+						<PropertyValue Property="ValueFormat">
+							<Record>
+								<PropertyValue Property="ScaleFactor" Int="2" Decimal="1"/>
+								<PropertyValue Property="NumberOfFractionalDigits" Int="1"/>
+							</Record>
+						</PropertyValue>
+						<PropertyValue Property="CriticalityCalculation">
+							<Record>
+								<PropertyValue Property="ImprovementDirection" EnumMember="UI.ImprovementDirectionType/Minimizing"/>
+								<PropertyValue Property="DeviationRangeHighValue" String="7300"/>
+								<PropertyValue Property="ToleranceRangeHighValue" String="7200"/>
+							</Record>
+						</PropertyValue>
+						<PropertyValue Property="TargetValue" String="2.000 "/>
+						<PropertyValue Property="TrendCalculation">
+							<Record>
+								<PropertyValue Property="ReferenceValue" String="5201680"/>
+								<PropertyValue Property="DownDifference" Int="10000000.0" Decimal="88"/>
+							</Record>
+						</PropertyValue>
+						<PropertyValue Property="Title" String="Overall sales"/>
+					</Record>
+				</Annotation>
+				<!--<Annotation Term="UI.Identification">
+					<Collection>
+						<Record Type="UI.DataFieldForIntentBasedNavigation">
+							<PropertyValue Property="Label" String=""/>
+							<PropertyValue Property="Criticality" EnumMember="UI.CriticalityType/Positive"/>
+							<PropertyValue Property="SemanticObject" String="Action"/>
+							<PropertyValue Property="Action" String="toappnavsample"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Label" String="Evaluation"/>
+							<PropertyValue Property="Value" String="evaluation3"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.Identification" Qualifier="Other">
+					<Collection>
+						<Record Type="UI.DataFieldForIntentBasedNavigation">
+							<PropertyValue Property="Label" String=""/>
+							<PropertyValue Property="Criticality" EnumMember="UI.CriticalityType/Positive"/>
+							<PropertyValue Property="SemanticObject" String="Action"/>
+							<PropertyValue Property="Action" String="toappnavsample"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Label" String="Evaluation"/>
+							<PropertyValue Property="Value" String="evaluation3"/>
+						</Record>
+					</Collection>
+				</Annotation>-->
+				<Annotation Term="UI.PresentationVariant" Qualifier="Eval_by_Currency1">
+					<Record>
+						<PropertyValue Property="MaxItems" Int="5"/>
+						<PropertyValue Property="GroupBy">
+							<Collection>
+								<PropertyPath>CountryCode</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="SortOrder">
+							<Collection>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="TotalSales"/>
+									<PropertyValue Property="Descending" Boolean="true" Bool="true"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Visualizations">
+							<Collection>
+								<AnnotationPath>@UI.Chart#Eval_by_Currency_Donut</AnnotationPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.PresentationVariant" Qualifier="Eval_by_Currency1_line">
+					<Record>
+						<PropertyValue Property="MaxItems" Int="5"/>
+						<PropertyValue Property="GroupBy">
+							<Collection>
+								<PropertyPath>CountryCode</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="SortOrder">
+							<Collection>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="TotalSales"/>
+									<PropertyValue Property="Descending" Boolean="true" Bool="true"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Visualizations">
+							<Collection>
+								<AnnotationPath>@UI.Chart#Eval_by_Currency_Line</AnnotationPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Chart" Qualifier="Eval_by_Currency_Donut">
+					<Record Type="UI.ChartDefinitionType">
+						<PropertyValue Property="Title" String="Total purchase order value by product category"/>
+						<PropertyValue Property="ChartType" EnumMember="UI.ChartType/Column"/>
+						<PropertyValue Property="Measures">
+							<Collection>
+								<PropertyPath>TotalSales</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Dimensions">
+							<Collection>
+								<PropertyPath>Product</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="MeasureAttributes">
+							<Collection>
+								<Record Type="UI.ChartMeasureAttributeType">
+									<PropertyValue Property="Measure" PropertyPath="TotalSales"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis2"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="DimensionAttributes">
+							<Collection>
+								<Record Type="UI.ChartDimensionAttributeType">
+									<PropertyValue Property="Dimension" PropertyPath="Product"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Chart" Qualifier="Eval_by_Currency_Line">
+					<Record Type="UI.ChartDefinitionType">
+						<PropertyValue Property="Title" String="Total purchase order value by product category"/>
+						<PropertyValue Property="ChartType" EnumMember="UI.ChartType/Line"/>
+						<PropertyValue Property="Measures">
+							<Collection>
+								<PropertyPath>TotalSales</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Dimensions">
+							<Collection>
+								<PropertyPath>Product</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="MeasureAttributes">
+							<Collection>
+								<Record Type="UI.ChartMeasureAttributeType">
+									<PropertyValue Property="Measure" PropertyPath="TotalSales"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis2"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="DimensionAttributes">
+							<Collection>
+								<Record Type="UI.ChartDimensionAttributeType">
+									<PropertyValue Property="Dimension" PropertyPath="Product"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

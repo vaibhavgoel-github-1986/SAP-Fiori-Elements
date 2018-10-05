@@ -1,0 +1,82 @@
+{
+  "d": {
+    "results": [
+      {
+        "__metadata": {
+          "id": "https://uyt928-er9001.wdf.sap.corp/sap/opu/odata/SSB/SMART_BUSINESS_DESIGNTIME_SRV/KPIs('.ZZZ.FLEXAGING.PAYABLEAMOUNT')",
+          "uri": "https://uyt928-er9001.wdf.sap.corp/sap/opu/odata/SSB/SMART_BUSINESS_DESIGNTIME_SRV/KPIs('.ZZZ.FLEXAGING.PAYABLEAMOUNT')",
+          "type": "SMART_BUSINESS_DESIGNTIME_SRV.KPI"
+        },
+        "KPIQualifier": "TotalSales",
+        "KPIID": ".ZZZ.CRM.TOTALSALES",
+        "KPITitle": "Total Sales",
+        "GroupID": ".ZZZ.CRM",
+        "GroupTitle": "Sales Analysis",
+        "ODataURI": "/sap/opu/odata/sap/ovpdemo",
+        "ODataEntityset": "SalesShare",
+        "ODataEntityType": "SalesShareType",
+        "IsDDConfigured": 1,
+        "IsSmartBusinessAppConfigured": 0,
+        "ModelID": "",
+        "ModelURI": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://uyt928-er9001.wdf.sap.corp/sap/opu/odata/SSB/SMART_BUSINESS_DESIGNTIME_SRV/KPIs('.ZZZ.FLEXAGING.PAYABLEAMOUNT')",
+          "uri": "https://uyt928-er9001.wdf.sap.corp/sap/opu/odata/SSB/SMART_BUSINESS_DESIGNTIME_SRV/KPIs('.ZZZ.FLEXAGING.PAYABLEAMOUNT')",
+          "type": "SMART_BUSINESS_DESIGNTIME_SRV.KPI"
+        },
+        "KPIQualifier": "TotalSalesLine",
+        "KPIID": ".ZZZ.FIN.PAYABLEAMOUNT",
+        "KPITitle": "Payable Amount",
+        "GroupID": ".ZZZ.FIN",
+        "GroupTitle": "Payment Analysis",
+        "ODataURI": "/sap/opu/odata/sap/ovpdemo",
+        "ODataEntityset": "SalesShare",
+        "ODataEntityType": "SalesShareType",
+        "IsDDConfigured": 1,
+        "IsSmartBusinessAppConfigured": 0,
+        "ModelID": "",
+        "ModelURI": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://uyt928-er9001.wdf.sap.corp/sap/opu/odata/SSB/SMART_BUSINESS_DESIGNTIME_SRV/KPIs('.ZZZ.FLEXAGING.PAYABLEAMOUNT')",
+          "uri": "https://uyt928-er9001.wdf.sap.corp/sap/opu/odata/SSB/SMART_BUSINESS_DESIGNTIME_SRV/KPIs('.ZZZ.FLEXAGING.PAYABLEAMOUNT')",
+          "type": "SMART_BUSINESS_DESIGNTIME_SRV.KPI"
+        },
+        "KPIQualifier": "TotalSales",
+        "KPIID": ".ZZZ.FIN.ACCOUNTINGYTD",
+        "KPITitle": "Accounting YTD",
+        "GroupID": ".ZZZ.FIN",
+        "GroupTitle": "Payment Analysis",
+        "ODataURI": "/sap/opu/odata/sap/ovpdemo",
+        "ODataEntityset": "SalesShare",
+        "ODataEntityType": "SalesShareType",
+        "IsDDConfigured": 1,
+        "IsSmartBusinessAppConfigured": 0,
+        "ModelID": "",
+        "ModelURI": ""
+      },
+      {
+        "__metadata": {
+          "id": "https://uyt928-er9001.wdf.sap.corp/sap/opu/odata/SSB/SMART_BUSINESS_DESIGNTIME_SRV/KPIs('.ZZZ.FLEXAGING.PAYABLEAMOUNT')",
+          "uri": "https://uyt928-er9001.wdf.sap.corp/sap/opu/odata/SSB/SMART_BUSINESS_DESIGNTIME_SRV/KPIs('.ZZZ.FLEXAGING.PAYABLEAMOUNT')",
+          "type": "SMART_BUSINESS_DESIGNTIME_SRV.KPI"
+        },
+        "KPIQualifier": "TotalSalesLine",
+        "KPIID": ".ZZZ.FIN.RECEIVABLESMTD",
+        "KPITitle": "Receivables MTD",
+        "GroupID": ".ZZZ.FIN",
+        "GroupTitle": "Payment Analysis",
+        "ODataURI": "/sap/opu/odata/sap/ovpdemo",
+        "ODataEntityset": "SalesShare",
+        "ODataEntityType": "SalesShareType",
+        "IsDDConfigured": 1,
+        "IsSmartBusinessAppConfigured": 0,
+        "ModelID": "",
+        "ModelURI": ""
+      }
+    ]
+  }
+}
